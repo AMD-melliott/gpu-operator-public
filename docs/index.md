@@ -20,6 +20,17 @@ The AMD GPU Operator simplifies the deployment and management of AMD Instinct GP
 
 - Helm v3.2.0+
 - `kubectl` CLI tool configured to access your cluster
+- [Cert Manager](https://cert-manager.io/docs/) Install it by running these commands if not already installed in the cluster:
+
+```bash
+helm repo add jetstack https://charts.jetstack.io --force-update
+
+helm install cert-manager jetstack/cert-manager \
+  --namespace cert-manager \
+  --create-namespace \
+  --version v1.15.1 \
+  --set crds.enabled=true
+```
 
 ## Quick Start
 
